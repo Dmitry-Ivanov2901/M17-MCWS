@@ -1,4 +1,0 @@
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "M17 MCWS - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
