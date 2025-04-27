@@ -71,41 +71,42 @@ int nHeightEllipse // height of ellipse
                 Process proc = new Process();
                 ProcessStartInfo psi = new ProcessStartInfo();
                 proc.StartInfo = psi;
+                psi.FileName = @"cmd.exe";
+                psi.UseShellExecute = true;
                 string[] ports = textBox5.Text.Split(',');
                 Random r = new Random();
                 string args = $"py nrecon.py -p {textBox5.Text} -t {textBox1.Text}";
                 if (checkBox1.Checked)
                 {
-                    args += "-sU true";
+                    args += " -sU true ";
                 }
                 if (checkBox2.Checked) 
                 {
-                    args += "-O true";
+                    args += " -O true ";
                 }
                 if (checkBox3.Checked)
                 {
-                    args += "-Pn true";
+                    args += " -Pn true ";
                 }
                 if (radioButton2.Checked)
                 {
-                    args += "-sS true";
-                    psi.Arguments = $"py nrecon.py -p {textBox5.Text} -t {textBox1.Text} -sS";
+                    args += " -sS true ";
                 }
                 if (checkBox4.Checked)
                 {
-                    args += "-Dn true";
+                    args += " -Dn true ";
                 }
                 if (radioButton3.Checked)
                 {
-                    args += "-sA true";
+                    args += " -sA true ";
                 }
                 if (radioButton4.Checked)
                 {
-                    args += "-sF true";
+                    args += " -sF true ";
                 }
                 if (radioButton5.Checked)
                 {
-                    args += "-sN true";
+                    args += " -sN true ";
                 }
                 if (radioButton1.Checked) 
                 {
@@ -115,6 +116,7 @@ int nHeightEllipse // height of ellipse
                         textBox2.AppendText(pscan.conn(IPAddress.Parse(textBox1.Text), po));
                     }
                 }
+                proc.Start();
             }
             catch (Exception ex)
             {

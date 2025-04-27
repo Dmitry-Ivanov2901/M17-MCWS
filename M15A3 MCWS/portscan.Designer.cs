@@ -186,7 +186,7 @@ namespace M15A3_MCWS
             // 
             button18.FlatStyle = FlatStyle.Flat;
             button18.ForeColor = Color.MediumSpringGreen;
-            button18.Location = new Point(1775, 0);
+            button18.Location = new Point(1775, 1);
             button18.Name = "button18";
             button18.Size = new Size(35, 34);
             button18.TabIndex = 5;
@@ -197,7 +197,7 @@ namespace M15A3_MCWS
             // 
             button19.FlatStyle = FlatStyle.Flat;
             button19.ForeColor = Color.DarkOrange;
-            button19.Location = new Point(1816, 0);
+            button19.Location = new Point(1816, 1);
             button19.Name = "button19";
             button19.Size = new Size(35, 34);
             button19.TabIndex = 4;
@@ -208,7 +208,7 @@ namespace M15A3_MCWS
             // 
             button20.FlatStyle = FlatStyle.Flat;
             button20.ForeColor = Color.FromArgb(255, 57, 57);
-            button20.Location = new Point(1857, 0);
+            button20.Location = new Point(1857, 1);
             button20.Name = "button20";
             button20.Size = new Size(35, 34);
             button20.TabIndex = 3;

@@ -112,7 +112,7 @@ namespace M15A3_MCWS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Киберратник", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "M17 MCWS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -147,7 +147,7 @@ namespace M15A3_MCWS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Киберратник", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "M17 MCWS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)

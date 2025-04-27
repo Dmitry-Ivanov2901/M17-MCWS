@@ -44,7 +44,6 @@ namespace M15A3_MCWS
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-
         private void panel1_Click(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -236,7 +235,14 @@ namespace M15A3_MCWS
                         smtp.CheckCertificateRevocation = false;
                         smtp.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true;
                         smtp.Timeout = 10000;
-                        smtp.Connect(mxDomain, (int)numericUpDown1.Value, SecureSocketOptions.None);
+                        if (checkBox5.Checked)
+                        {
+                            smtp.Connect(mxDomain, (int)numericUpDown1.Value, SecureSocketOptions.SslOnConnect);
+                        }
+                        else
+                        {
+                            smtp.Connect(mxDomain, (int)numericUpDown1.Value, SecureSocketOptions.None);
+                        }
                         if (checkBox3.Checked)
                         {
                             smtp.Authenticate(textBox3.Text, textBox4.Text);
@@ -305,7 +311,14 @@ namespace M15A3_MCWS
                         smtp.CheckCertificateRevocation = false;
                         smtp.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true;
                         smtp.Timeout = 10000;
-                        smtp.Connect(mxDomain, (int)numericUpDown1.Value, SecureSocketOptions.None);
+                        if (checkBox5.Checked)
+                        {
+                            smtp.Connect(mxDomain, (int)numericUpDown1.Value, SecureSocketOptions.SslOnConnect);
+                        }
+                        else
+                        {
+                            smtp.Connect(mxDomain, (int)numericUpDown1.Value, SecureSocketOptions.None);
+                        }
                         if (checkBox3.Checked)
                         {
                             smtp.Authenticate(textBox3.Text, textBox4.Text);
@@ -317,9 +330,9 @@ namespace M15A3_MCWS
                     }
                 }
             }
-            catch (Exception x)
+            catch (Exception ex)
             {
-                MessageBox.Show(x.Message, "M17 MCWS - Exception", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message, "M17 MCWS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
