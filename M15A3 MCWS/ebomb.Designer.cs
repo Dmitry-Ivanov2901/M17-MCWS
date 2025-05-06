@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label14 = new Label();
+            name1 = new TextBox();
             groupBox1 = new GroupBox();
             label7 = new Label();
             label6 = new Label();
@@ -79,6 +81,7 @@
             fontDialog1 = new FontDialog();
             colorDialog1 = new ColorDialog();
             colorDialog2 = new ColorDialog();
+            checkBox6 = new CheckBox();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
@@ -91,6 +94,10 @@
             // 
             // panel1
             // 
+            panel1.AutoScroll = true;
+            panel1.Controls.Add(checkBox6);
+            panel1.Controls.Add(label14);
+            panel1.Controls.Add(name1);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(checkBox5);
@@ -121,8 +128,25 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1924, 938);
+            panel1.Size = new Size(1924, 1055);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(660, 82);
+            label14.Name = "label14";
+            label14.Size = new Size(176, 18);
+            label14.TabIndex = 68;
+            label14.Text = "Enter the name of the sender";
+            // 
+            // name1
+            // 
+            name1.Location = new Point(520, 107);
+            name1.Name = "name1";
+            name1.Size = new Size(461, 25);
+            name1.TabIndex = 67;
             // 
             // groupBox1
             // 
@@ -131,11 +155,11 @@
             groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(textBox3);
             groupBox1.ForeColor = Color.Cyan;
-            groupBox1.Location = new Point(1145, 227);
+            groupBox1.Location = new Point(1145, 255);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(392, 203);
+            groupBox1.Size = new Size(392, 228);
             groupBox1.TabIndex = 52;
             groupBox1.TabStop = false;
             groupBox1.Text = "Credentials(FILL IN ONLY IF THE DEFAULT CREDENTIALS CHECKBOX IS CHECKED";
@@ -143,7 +167,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(7, 131);
+            label7.Location = new Point(7, 147);
             label7.Name = "label7";
             label7.Size = new Size(66, 18);
             label7.TabIndex = 25;
@@ -152,7 +176,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(7, 47);
+            label6.Location = new Point(7, 53);
             label6.Name = "label6";
             label6.Size = new Size(67, 18);
             label6.TabIndex = 24;
@@ -160,7 +184,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(7, 152);
+            textBox4.Location = new Point(7, 171);
             textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(317, 25);
@@ -168,7 +192,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(7, 78);
+            textBox3.Location = new Point(7, 88);
             textBox3.Margin = new Padding(3, 4, 3, 4);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(317, 25);
@@ -185,16 +209,16 @@
             panel2.ForeColor = Color.Red;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1931, 39);
+            panel2.Size = new Size(1931, 40);
             panel2.TabIndex = 57;
             panel2.MouseDown += panel1_Click;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Nunito", 15.75F);
+            label13.Font = new Font("Nunito", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
             label13.ForeColor = Color.Cyan;
-            label13.Location = new Point(81, 5);
+            label13.Location = new Point(81, 3);
             label13.Name = "label13";
             label13.Size = new Size(203, 29);
             label13.TabIndex = 7;
@@ -203,9 +227,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.nguyenflag;
-            pictureBox1.Location = new Point(14, 0);
+            pictureBox1.Location = new Point(14, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(61, 37);
+            pictureBox1.Size = new Size(61, 35);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
@@ -215,7 +239,7 @@
             button18.ForeColor = Color.MediumSpringGreen;
             button18.Location = new Point(1798, 0);
             button18.Name = "button18";
-            button18.Size = new Size(35, 34);
+            button18.Size = new Size(35, 38);
             button18.TabIndex = 5;
             button18.Text = "🗕";
             button18.UseVisualStyleBackColor = true;
@@ -227,7 +251,7 @@
             button19.ForeColor = Color.DarkOrange;
             button19.Location = new Point(1839, 0);
             button19.Name = "button19";
-            button19.Size = new Size(35, 34);
+            button19.Size = new Size(35, 38);
             button19.TabIndex = 4;
             button19.Text = "🗖";
             button19.UseVisualStyleBackColor = true;
@@ -239,7 +263,7 @@
             button20.ForeColor = Color.FromArgb(255, 57, 57);
             button20.Location = new Point(1880, 0);
             button20.Name = "button20";
-            button20.Size = new Size(35, 34);
+            button20.Size = new Size(35, 38);
             button20.TabIndex = 3;
             button20.Text = "X";
             button20.UseVisualStyleBackColor = true;
@@ -248,7 +272,7 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(479, 273);
+            checkBox5.Location = new Point(493, 278);
             checkBox5.Margin = new Padding(3, 4, 3, 4);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(75, 22);
@@ -259,7 +283,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(335, 301);
+            checkBox4.Location = new Point(349, 310);
             checkBox4.Margin = new Padding(3, 4, 3, 4);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(175, 22);
@@ -271,10 +295,10 @@
             // 
             button12.BackColor = Color.FromArgb(16, 16, 16);
             button12.FlatStyle = FlatStyle.Flat;
-            button12.Location = new Point(727, 339);
+            button12.Location = new Point(741, 352);
             button12.Margin = new Padding(3, 4, 3, 4);
             button12.Name = "button12";
-            button12.Size = new Size(240, 54);
+            button12.Size = new Size(240, 61);
             button12.TabIndex = 54;
             button12.Text = "Add an attachment file to the message";
             button12.UseVisualStyleBackColor = false;
@@ -283,7 +307,7 @@
             // semi
             // 
             semi.AutoSize = true;
-            semi.Location = new Point(163, 273);
+            semi.Location = new Point(177, 278);
             semi.Margin = new Padding(3, 4, 3, 4);
             semi.Name = "semi";
             semi.Size = new Size(310, 22);
@@ -297,9 +321,9 @@
             groupBox2.Controls.Add(textBox1);
             groupBox2.Controls.Add(label4);
             groupBox2.ForeColor = Color.Cyan;
-            groupBox2.Location = new Point(1145, 437);
+            groupBox2.Location = new Point(1145, 492);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(392, 165);
+            groupBox2.Size = new Size(392, 186);
             groupBox2.TabIndex = 63;
             groupBox2.TabStop = false;
             groupBox2.Text = "DNS resolver used for resolving the MX server of the domain";
@@ -308,10 +332,10 @@
             // 
             button9.BackColor = Color.FromArgb(16, 16, 16);
             button9.FlatStyle = FlatStyle.Flat;
-            button9.Location = new Point(7, 74);
+            button9.Location = new Point(7, 83);
             button9.Margin = new Padding(3, 4, 3, 4);
             button9.Name = "button9";
-            button9.Size = new Size(153, 37);
+            button9.Size = new Size(153, 57);
             button9.TabIndex = 37;
             button9.Text = "Save this DNS resolver";
             button9.UseVisualStyleBackColor = false;
@@ -319,7 +343,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(7, 42);
+            textBox1.Location = new Point(7, 47);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(223, 25);
             textBox1.TabIndex = 1;
@@ -327,7 +351,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(7, 21);
+            label4.Location = new Point(7, 24);
             label4.Name = "label4";
             label4.Size = new Size(223, 18);
             label4.TabIndex = 0;
@@ -336,7 +360,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(1011, 215);
+            label11.Location = new Point(1480, 222);
             label11.Name = "label11";
             label11.Size = new Size(36, 18);
             label11.TabIndex = 62;
@@ -345,7 +369,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(935, 215);
+            label10.Location = new Point(1404, 222);
             label10.Name = "label10";
             label10.Size = new Size(55, 18);
             label10.TabIndex = 61;
@@ -354,7 +378,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(886, 215);
+            label9.Location = new Point(1355, 222);
             label9.Name = "label9";
             label9.Size = new Size(33, 18);
             label9.TabIndex = 60;
@@ -363,7 +387,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(902, 146);
+            label8.Location = new Point(1371, 144);
             label8.Name = "label8";
             label8.Size = new Size(131, 18);
             label8.TabIndex = 59;
@@ -371,7 +395,7 @@
             // 
             // trackBar1
             // 
-            trackBar1.Location = new Point(886, 167);
+            trackBar1.Location = new Point(1355, 168);
             trackBar1.Maximum = 2;
             trackBar1.Name = "trackBar1";
             trackBar1.Size = new Size(161, 45);
@@ -381,7 +405,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(693, 146);
+            label5.Location = new Point(1162, 144);
             label5.Name = "label5";
             label5.Size = new Size(168, 18);
             label5.TabIndex = 64;
@@ -390,7 +414,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(676, 128);
+            label12.Location = new Point(1145, 124);
             label12.Name = "label12";
             label12.Size = new Size(204, 18);
             label12.TabIndex = 66;
@@ -407,11 +431,11 @@
             groupBox4.Controls.Add(button2);
             groupBox4.Controls.Add(content);
             groupBox4.ForeColor = Color.Cyan;
-            groupBox4.Location = new Point(14, 393);
+            groupBox4.Location = new Point(28, 413);
             groupBox4.Margin = new Padding(3, 4, 3, 4);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(3, 4, 3, 4);
-            groupBox4.Size = new Size(994, 541);
+            groupBox4.Size = new Size(994, 609);
             groupBox4.TabIndex = 44;
             groupBox4.TabStop = false;
             groupBox4.Text = "Enter the content of the email here";
@@ -420,10 +444,10 @@
             // 
             button7.BackColor = Color.FromArgb(16, 16, 16);
             button7.FlatStyle = FlatStyle.Flat;
-            button7.Location = new Point(854, 478);
+            button7.Location = new Point(854, 538);
             button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
-            button7.Size = new Size(134, 54);
+            button7.Size = new Size(134, 61);
             button7.TabIndex = 9;
             button7.Text = "Open a file with the content";
             button7.UseVisualStyleBackColor = false;
@@ -433,10 +457,10 @@
             // 
             button3.BackColor = Color.FromArgb(16, 16, 16);
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(713, 478);
+            button3.Location = new Point(713, 538);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(134, 54);
+            button3.Size = new Size(134, 61);
             button3.TabIndex = 8;
             button3.Text = "Underline";
             button3.UseVisualStyleBackColor = false;
@@ -446,10 +470,10 @@
             // 
             button1.BackColor = Color.FromArgb(16, 16, 16);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(573, 478);
+            button1.Location = new Point(573, 538);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(134, 54);
+            button1.Size = new Size(134, 61);
             button1.TabIndex = 7;
             button1.Text = "Bold";
             button1.UseVisualStyleBackColor = false;
@@ -459,10 +483,10 @@
             // 
             button6.BackColor = Color.FromArgb(16, 16, 16);
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Location = new Point(429, 478);
+            button6.Location = new Point(429, 538);
             button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
-            button6.Size = new Size(134, 54);
+            button6.Size = new Size(134, 61);
             button6.TabIndex = 5;
             button6.Text = "Italic";
             button6.UseVisualStyleBackColor = false;
@@ -472,10 +496,10 @@
             // 
             button5.BackColor = Color.FromArgb(16, 16, 16);
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Location = new Point(288, 478);
+            button5.Location = new Point(288, 538);
             button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
-            button5.Size = new Size(134, 54);
+            button5.Size = new Size(134, 61);
             button5.TabIndex = 6;
             button5.Text = "Change the font";
             button5.UseVisualStyleBackColor = false;
@@ -485,10 +509,10 @@
             // 
             button4.BackColor = Color.FromArgb(16, 16, 16);
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(147, 478);
+            button4.Location = new Point(147, 538);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(134, 54);
+            button4.Size = new Size(134, 61);
             button4.TabIndex = 5;
             button4.Text = "Change the background color";
             button4.UseVisualStyleBackColor = false;
@@ -498,10 +522,10 @@
             // 
             button2.BackColor = Color.FromArgb(16, 16, 16);
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(7, 478);
+            button2.Location = new Point(7, 538);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(134, 54);
+            button2.Size = new Size(134, 61);
             button2.TabIndex = 2;
             button2.Text = "Change the text color";
             button2.UseVisualStyleBackColor = false;
@@ -509,17 +533,17 @@
             // 
             // content
             // 
-            content.Location = new Point(7, 27);
+            content.Location = new Point(7, 30);
             content.Margin = new Padding(3, 4, 3, 4);
             content.Name = "content";
-            content.Size = new Size(980, 442);
+            content.Size = new Size(980, 497);
             content.TabIndex = 0;
             content.Text = "";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(13, 126);
+            label2.Location = new Point(13, 142);
             label2.Name = "label2";
             label2.Size = new Size(217, 18);
             label2.TabIndex = 43;
@@ -527,7 +551,7 @@
             // 
             // src
             // 
-            src.Location = new Point(13, 148);
+            src.Location = new Point(13, 166);
             src.Margin = new Padding(3, 4, 3, 4);
             src.Name = "src";
             src.Size = new Size(501, 25);
@@ -536,7 +560,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 73);
+            label1.Location = new Point(13, 82);
             label1.Name = "label1";
             label1.Size = new Size(501, 18);
             label1.TabIndex = 41;
@@ -544,7 +568,7 @@
             // 
             // target
             // 
-            target.Location = new Point(13, 95);
+            target.Location = new Point(13, 107);
             target.Margin = new Padding(3, 4, 3, 4);
             target.Name = "target";
             target.Size = new Size(501, 25);
@@ -552,7 +576,7 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(676, 167);
+            numericUpDown1.Location = new Point(1145, 168);
             numericUpDown1.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(204, 25);
@@ -561,7 +585,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(163, 301);
+            checkBox3.Location = new Point(177, 310);
             checkBox3.Margin = new Padding(3, 4, 3, 4);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(162, 22);
@@ -572,7 +596,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(163, 332);
+            checkBox2.Location = new Point(177, 345);
             checkBox2.Margin = new Padding(3, 4, 3, 4);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(229, 22);
@@ -584,10 +608,10 @@
             // 
             button8.BackColor = Color.FromArgb(16, 16, 16);
             button8.FlatStyle = FlatStyle.Flat;
-            button8.Location = new Point(481, 339);
+            button8.Location = new Point(495, 352);
             button8.Margin = new Padding(3, 4, 3, 4);
             button8.Name = "button8";
-            button8.Size = new Size(240, 54);
+            button8.Size = new Size(240, 61);
             button8.TabIndex = 49;
             button8.Text = "Select the file with the custom email addresses";
             button8.UseVisualStyleBackColor = false;
@@ -596,7 +620,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(163, 361);
+            checkBox1.Location = new Point(177, 377);
             checkBox1.Margin = new Padding(3, 4, 3, 4);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(285, 22);
@@ -606,7 +630,7 @@
             // 
             // subject
             // 
-            subject.Location = new Point(14, 208);
+            subject.Location = new Point(14, 234);
             subject.Margin = new Padding(3, 4, 3, 4);
             subject.Name = "subject";
             subject.Size = new Size(500, 25);
@@ -615,7 +639,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(14, 186);
+            label3.Location = new Point(14, 209);
             label3.Name = "label3";
             label3.Size = new Size(136, 18);
             label3.TabIndex = 47;
@@ -625,23 +649,33 @@
             // 
             spam.BackColor = Color.FromArgb(16, 16, 16);
             spam.FlatStyle = FlatStyle.Flat;
-            spam.Location = new Point(16, 339);
+            spam.Location = new Point(30, 352);
             spam.Margin = new Padding(3, 4, 3, 4);
             spam.Name = "spam";
-            spam.Size = new Size(134, 54);
+            spam.Size = new Size(134, 61);
             spam.TabIndex = 45;
             spam.Text = "Start spamming";
             spam.UseVisualStyleBackColor = false;
             spam.Click += spam_Click;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(1371, 110);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(134, 22);
+            checkBox6.TabIndex = 69;
+            checkBox6.Text = "Mark as important";
+            checkBox6.UseVisualStyleBackColor = true;
             // 
             // ebomb
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(16, 16, 16);
-            ClientSize = new Size(1924, 938);
+            ClientSize = new Size(1924, 1055);
             Controls.Add(panel1);
-            Font = new Font("Nunito", 9.749998F);
+            Font = new Font("Nunito", 9.749998F, FontStyle.Regular, GraphicsUnit.Point, 238);
             ForeColor = Color.Cyan;
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
@@ -717,5 +751,8 @@
         private FontDialog fontDialog1;
         private ColorDialog colorDialog1;
         private ColorDialog colorDialog2;
+        private TextBox name1;
+        private Label label14;
+        private CheckBox checkBox6;
     }
 }

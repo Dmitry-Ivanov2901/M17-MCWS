@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OTt0gDsl8RU=",
+  "dgSpecHash": "1t7qjTwHGf8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\thema\\OneDrive - SPŠEaG v Úžlabině\\M15A3 MCWS\\M15A3 MCWS\\M15A3 MCWS.csproj",
+  "projectFilePath": "D:\\M15A3 MCWS\\M15A3 MCWS\\M15A3 MCWS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thema\\.nuget\\packages\\arplookup\\2.0.3\\arplookup.2.0.3.nupkg.sha512",
     "C:\\Users\\thema\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

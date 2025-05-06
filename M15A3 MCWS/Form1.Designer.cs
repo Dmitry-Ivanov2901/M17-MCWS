@@ -33,7 +33,6 @@
             groupBox2 = new GroupBox();
             button13 = new Button();
             button14 = new Button();
-            button10 = new Button();
             button8 = new Button();
             button16 = new Button();
             button7 = new Button();
@@ -103,7 +102,6 @@
             // 
             groupBox2.Controls.Add(button13);
             groupBox2.Controls.Add(button14);
-            groupBox2.Controls.Add(button10);
             groupBox2.Controls.Add(button8);
             groupBox2.Controls.Add(button16);
             groupBox2.Controls.Add(button7);
@@ -122,13 +120,13 @@
             // 
             button13.FlatAppearance.BorderColor = Color.MediumSpringGreen;
             button13.FlatStyle = FlatStyle.Flat;
-            button13.Location = new Point(7, 135);
+            button13.Location = new Point(542, 24);
             button13.Name = "button13";
-            button13.Size = new Size(172, 51);
+            button13.Size = new Size(228, 51);
             button13.TabIndex = 18;
             button13.Text = "IP smoke launcher";
             button13.UseVisualStyleBackColor = true;
-            button13.Click += button13_Click;
+            button13.Click += button13_Click_1;
             // 
             // button14
             // 
@@ -141,18 +139,6 @@
             button14.Text = "Host discovery";
             button14.UseVisualStyleBackColor = true;
             button14.Click += button14_Click_1;
-            // 
-            // button10
-            // 
-            button10.FlatAppearance.BorderColor = Color.MediumSpringGreen;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Location = new Point(542, 25);
-            button10.Name = "button10";
-            button10.Size = new Size(228, 50);
-            button10.TabIndex = 16;
-            button10.Text = "Port scanner";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click_1;
             // 
             // button8
             // 
@@ -534,7 +520,6 @@
         private GroupBox groupBox2;
         private Button button13;
         private Button button14;
-        private Button button10;
         private Button button8;
         private Button button16;
         private Button button7;

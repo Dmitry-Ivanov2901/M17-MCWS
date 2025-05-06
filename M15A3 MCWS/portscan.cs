@@ -75,7 +75,7 @@ int nHeightEllipse // height of ellipse
                 psi.UseShellExecute = true;
                 string[] ports = textBox5.Text.Split(',');
                 Random r = new Random();
-                string args = $"py nrecon.py -p {textBox5.Text} -t {textBox1.Text}";
+                string args = $"/c start nrecon.py -p {textBox5.Text} -t {textBox1.Text}";
                 if (checkBox1.Checked)
                 {
                     args += " -sU true ";
@@ -116,6 +116,7 @@ int nHeightEllipse // height of ellipse
                         textBox2.AppendText(pscan.conn(IPAddress.Parse(textBox1.Text), po));
                     }
                 }
+                psi.Arguments = args;
                 proc.Start();
             }
             catch (Exception ex)

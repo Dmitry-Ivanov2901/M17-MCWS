@@ -192,6 +192,7 @@ namespace M15A3_MCWS
             button18.TabIndex = 5;
             button18.Text = "🗕";
             button18.UseVisualStyleBackColor = true;
+            button18.Click += pictureBox4_Click;
             // 
             // button19
             // 

@@ -180,15 +180,19 @@ namespace M15A3_MCWS
                     {
                         case 0:
                             msg.Priority = MessagePriority.NonUrgent;
+                            msg.XPriority = XMessagePriority.Low;
                             break;
                         case 1:
                             msg.Priority = MessagePriority.Normal;
+                            msg.XPriority = XMessagePriority.Normal;
                             break;
                         case 2:
                             msg.Priority = MessagePriority.Urgent;
+                            msg.XPriority = XMessagePriority.Highest;
                             break;
                         default:
                             msg.Priority = MessagePriority.Normal;
+                            msg.XPriority = XMessagePriority.Normal;
                             break;
                     }
                     msg.Date = DateTime.Now;
@@ -199,14 +203,17 @@ namespace M15A3_MCWS
                     }
                     if (checkBox1.Checked)
                     {
+                        int x = 0;
                         foreach (string em in srcEmails)
                         {
                             msg.From.Add(InternetAddress.Parse(em));
+                            msg.From[0].Name = name1.Text;
                         }
                     }
                     else
                     {
                         msg.From.Add(InternetAddress.Parse(src.Text));
+                        msg.From[0].Name = name1.Text;
                     }
                     BodyBuilder builder = new BodyBuilder();
                     if (checkBox4.Checked)
@@ -222,6 +229,7 @@ namespace M15A3_MCWS
                     builder.TextBody = content.Text;
                     msg.Body = builder.ToMessageBody();
                     msg.Subject = subject.Text;
+                    msg.Date = DateTime.Now;
                     msg.Sender = MailboxAddress.Parse(src.Text);
                     MailKit.Net.Smtp.SmtpClient smtp = new MailKit.Net.Smtp.SmtpClient();
                     foreach (string em in ems)
@@ -277,14 +285,17 @@ namespace M15A3_MCWS
                     }
                     if (checkBox1.Checked)
                     {
+                        int x = 0;
                         foreach (string em in srcEmails)
                         {
                             msg.From.Add(InternetAddress.Parse(em));
+                            msg.From[0].Name = name1.Text;
                         }
                     }
                     else
                     {
                         msg.From.Add(InternetAddress.Parse(src.Text));
+                        msg.From[0].Name = name1.Text;
                     }
                     BodyBuilder builder = new BodyBuilder();
                     if (checkBox4.Checked)
@@ -298,9 +309,14 @@ namespace M15A3_MCWS
                     TextPart body = new TextPart("plain");
                     body.Text = content.Text;
                     builder.TextBody = content.Text;
+                    if (checkBox6.Checked)
+                    {
+                        msg.Importance = MessageImportance.High;
+                    }
                     msg.Body = builder.ToMessageBody();
                     msg.Subject = subject.Text;
                     msg.Sender = MailboxAddress.Parse(src.Text);
+
                     MailKit.Net.Smtp.SmtpClient smtp = new MailKit.Net.Smtp.SmtpClient();
                     foreach (string em in ems)
                     {
@@ -342,5 +358,9 @@ namespace M15A3_MCWS
             Settings.Default.Save();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

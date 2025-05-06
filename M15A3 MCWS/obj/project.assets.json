@@ -7579,11 +7579,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thema\\OneDrive - SPŠEaG v Úžlabině\\M15A3 MCWS\\M15A3 MCWS\\M15A3 MCWS.csproj",
+      "projectUniqueName": "D:\\M15A3 MCWS\\M15A3 MCWS\\M15A3 MCWS.csproj",
       "projectName": "M15A3 MCWS",
-      "projectPath": "C:\\Users\\thema\\OneDrive - SPŠEaG v Úžlabině\\M15A3 MCWS\\M15A3 MCWS\\M15A3 MCWS.csproj",
+      "projectPath": "D:\\M15A3 MCWS\\M15A3 MCWS\\M15A3 MCWS.csproj",
       "packagesPath": "C:\\Users\\thema\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thema\\OneDrive - SPŠEaG v Úžlabině\\M15A3 MCWS\\M15A3 MCWS\\obj\\",
+      "outputPath": "D:\\M15A3 MCWS\\M15A3 MCWS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\VS_2022\\NuGetPackages"

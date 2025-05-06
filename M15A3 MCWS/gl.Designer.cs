@@ -107,6 +107,7 @@ namespace M15A3_MCWS
             button18.TabIndex = 5;
             button18.Text = "🗕";
             button18.UseVisualStyleBackColor = true;
+            button18.Click += pictureBox4_Click;
             // 
             // button19
             // 
@@ -118,6 +119,7 @@ namespace M15A3_MCWS
             button19.TabIndex = 4;
             button19.Text = "🗖";
             button19.UseVisualStyleBackColor = true;
+            button19.Click += pictureBox3_Click;
             // 
             // button20
             // 
@@ -129,6 +131,7 @@ namespace M15A3_MCWS
             button20.TabIndex = 3;
             button20.Text = "X";
             button20.UseVisualStyleBackColor = true;
+            button20.Click += pictureBox2_Click;
             // 
             // comboBox1
             // 

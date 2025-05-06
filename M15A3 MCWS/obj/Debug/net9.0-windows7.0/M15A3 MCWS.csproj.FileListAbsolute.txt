@@ -77,3 +77,6 @@ C:\Users\thema\OneDrive - SPŠEaG v Úžlabině\M15A3 MCWS\M15A3 MCWS\obj\Debug\
 C:\Users\thema\OneDrive - SPŠEaG v Úžlabině\M15A3 MCWS\M15A3 MCWS\obj\Debug\net9.0-windows7.0\M15A3 MCWS.pdb
 C:\Users\thema\OneDrive - SPŠEaG v Úžlabině\M15A3 MCWS\M15A3 MCWS\obj\Debug\net9.0-windows7.0\M15A3 MCWS.genruntimeconfig.cache
 C:\Users\thema\OneDrive - SPŠEaG v Úžlabině\M15A3 MCWS\M15A3 MCWS\obj\Debug\net9.0-windows7.0\ref\M15A3 MCWS.dll
+D:\M15A3 MCWS\M15A3 MCWS\obj\Debug\net9.0-windows7.0\M15A3_MCWS.gl.resources
+D:\M15A3 MCWS\M15A3 MCWS\obj\Debug\net9.0-windows7.0\M15A3_MCWS.macFlooding.resources
+D:\M15A3 MCWS\M15A3 MCWS\obj\Debug\net9.0-windows7.0\M15A3 MCWS.sourcelink.json

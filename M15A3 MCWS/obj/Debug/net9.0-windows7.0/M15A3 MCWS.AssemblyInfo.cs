@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("M15A3 MCWS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("16.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3a05f5f771d598497f4eac15a0d19c69949e272")]
 [assembly: System.Reflection.AssemblyProductAttribute("M15A3 MCWS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("M15A3 MCWS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("16.0")]
